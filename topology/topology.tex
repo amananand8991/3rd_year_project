@@ -1,0 +1,56 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{bm}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{newpxtext,newpxmath}
+\newcommand{\Zstroke}{%
+  \text{\ooalign{\hidewidth\raisebox{0.2ex}{--}\hidewidth\cr$Z$\cr}}%
+}
+\graphicspath{ {images/} }
+\begin{document}
+\begin{center} 
+{\Huge{\textbf{Topology}}}\\
+\end{center}
+
+\section {Illustrative example: Particle on a ring}
+For a particle on a ring the lagrangian is given as below:
+\begin{equation}
+\mathcal{L}(\phi,\dot{\phi}) = \frac{1}{2M}\dot{\phi}^2 + A\dot{\phi}
+\end{equation}
+Here we are measuring coordinates in terms of the angular variable $\phi \in [0, 2\pi]$ and M is the moment of inertia. Note this gives the Euler-Lagrange equation as $\ddot{\phi}=0$. Here A is a constant and we are adding just a total derivative term in the free particle lagrangian which does not change it. This gives the conjugate momenta $\hat{p}_{\phi} = \dot{\phi} + A$.  This then gives the Hamiltonian as
+\begin{equation}
+\mathcal{H}(\phi,\hat{p}_{\phi}) =  \hat{p}_{\phi}\dot{\phi}- \mathcal{L}(\phi,\dot{\phi}) = \frac{1}{2M}(\hat{p}_{\phi} - A)^2
+\end{equation}
+This is just like the Hamiltonian when the magnetic flux is $A_{\phi}$. For a magnetic flux $\Phi$ inside the ring we can write it as
+\begin{equation}
+\oint \vec{A} \cdot d\vec{l}=\int \vec{B}\cdot d\vec{S} = \Phi .
+\end{equation}
+This gives the magnetic potential as
+\begin{equation}
+A_{\phi} = \frac{\Phi}{2\pi r}
+\end{equation}
+Now the Hamiltonian for the quantum version can be written as
+\begin{equation}
+\hat{\mathcal{H}}  = \frac{1}{2}\bigg(-i\hbar\frac{1}{r} \frac{\partial}{\partial\phi}-qA_{\phi} \bigg)^2 = \frac{1}{2}(-i\partial_{\phi}-A)^2 
+\end{equation}
+We have chosen the units so that all the constants are unity. Here A$= \Phi/\Phi_0$ where $\Phi_0 = \frac{hc}{e} = 2\pi$ represents the magnetic quantum flux. Periodicity implies $\psi(0) = \psi(2\pi)$. This gives us
+\begin{equation}
+\psi_n(\phi) = \frac{1}{\sqrt{2\pi}}\textrm{exp}(in\phi), \quad \epsilon_n = \frac{1}{2}\bigg(n -\frac{\Phi}{\Phi_0} \bigg), \quad n \in  \mathbb{Z}.
+\end{equation}
+Let's reformulate this problem in terms of path integrals in imaginary time
+\begin{equation}
+\Zstroke = \int_{\phi(\beta)-\phi(0) \in 2\pi \mathbb{Z}} D\phi\*\ e^{- \int d\tau \*\ L(\phi,\dot{\phi})}
+\end{equation}
+The Lagrangian is given by
+\begin{equation}
+L(\phi,\dot{\phi}) = \frac{1}{2}\dot{\phi}^2 -iA\dot{\phi}
+\end{equation}
+
+
+
+
+\end{document}

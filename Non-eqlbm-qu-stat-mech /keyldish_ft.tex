@@ -1,0 +1,65 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{bm}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{breqn}
+\usepackage{float}
+\usepackage{wrapfig}
+\graphicspath{ {images/} }
+\begin{document}
+\begin{center} 
+{\Huge{\textbf{Keyldish Field Theory}}}\\
+\end{center}
+
+\section {Mathematical Preliminaries}
+
+\subsection {Closed time contour}
+
+The density matrix evolves in time according to the Von Neumann equation as
+\begin{equation}%%%%%%%%%% 1 %%%%%%%%
+\partial_t \hat{\rho}(t) = -i [\hat{H}(t), \hat{\rho}(t)],
+\end{equation}
+
+which can be solved by taking 
+\begin{equation}%%%%%%%%%% 2 %%%%%%%%
+\hat{\rho}(t) = \hat{\mathcal{U}}_{t,-\infty}\hat{\rho}(-\infty) [\hat{\mathcal{U}}_{t,-\infty}]^{\dagger}.
+\end{equation}
+Where the unitary evolution operator obeys
+
+\begin{equation}%%%%%%%%%% 3 %%%%%%%%
+\partial_t \hat{\mathcal{U}}_{t,t'} = -i \hat{H}(t) \*\ \hat{\mathcal{U}}_{t,t'} ;\quad \partial_{t'} \hat{\mathcal{U}}_{t,t'} = i  \hat{\mathcal{U}}_{t,t'}\*\ \hat{H}(t') .
+\end{equation}
+The time evolution operator can be written as 
+\begin{dmath}
+\hat{\mathcal{U}}_{t,t'}  = \lim_{N \to \infty}e^{-i \hat{H}(t-\delta_t)\delta_t}e^{-i \hat{H}(t-2\delta_t)\delta_t}...e^{-i \hat{H}(t')\delta_t}  =\mathbb{T}\mathrm{exp}\bigg(-i \int_{t'}^t \hat{H}(t) dt \bigg).
+\end{dmath}
+The expectation value of any general operator is given as
+\begin{equation}
+\langle \hat{\mathcal{O}} \rangle (t) \equiv \frac{\mathrm{Tr}\{\hat{\mathcal{O}}\hat{\rho}(t)\}}{\mathrm{Tr}\{\hat{\rho}(t)\}} = \frac{1}{\mathrm{Tr}\{\hat{\rho}(t)\}} \mathrm{Tr}\{ \hat{\mathcal{U}}_{-\infty,t} \hat{\mathcal{O}} \hat{\mathcal{U}}_{t,-\infty} \hat{\rho}(-\infty)  \}.
+\end{equation}
+Using the below two equations the general contour can be taken from t = $-\infty$ to t = $\infty$ and again back.
+\begin{equation}
+\hat{\mathcal{U}}_{t,+\infty}\hat{\mathcal{U}}_{+\infty,t} = \hat{1}, \quad \hat{\mathcal{U}}_{-\infty,t}\hat{\mathcal{U}}_{t,+\infty} = \hat{\mathcal{U}}_{-\infty,+\infty}
+\end{equation}
+This gives 
+
+\begin{equation}
+\langle \hat{\mathcal{O}} \rangle (t)  = \frac{1}{\mathrm{Tr}\{\hat{\rho}(t)\}} \mathrm{Tr}\{\hat{\mathcal{U}}_{-\infty,+\infty} \hat{\mathcal{U}}_{+\infty,t} \hat{\mathcal{O}} \hat{\mathcal{U}}_{t,-\infty} \hat{\rho}(-\infty)  \}.
+\end{equation}
+
+\subsection {Coherent states}
+A coherent state parametrized by a complex number $\phi$ is defined as the eigenstate of the annhilation operator  as $\hat{b} |\phi\rangle = \phi |\phi\rangle$
+\subsection {Partition function}
+
+\subsection {Gaussian like integrals}
+
+\subsection {Going Green}
+
+
+\section {Keyldish Sorcery}
+
+\section {Keyldish Kung Fu}
+
+\end{document}
