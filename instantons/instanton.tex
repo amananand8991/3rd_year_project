@@ -3,6 +3,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{breqn}
 \usepackage{amsfonts}
 \usepackage{float}
 \usepackage{wrapfig}
@@ -13,7 +14,7 @@
 \end{center}
 
 \section {What are Instantons?}
-Instantons refer to localised finite-action solutions of the classical Euclidean field equations of a theory. They are in some sense similar to solitons but instead they are localised in time. 
+Instantons refer to localised finite-action solutions of the classical Euclidean equation of motion that connects to poyential maxima. They are in some sense similar to solitons but instead they are localised in time. 
 \section {How to get Euclidean action?}
 To go from Minkowsi space to Euclidean space we do the analytic continuation of time, i.e. t$\to -i\tau$, this is also called \textbf{Wick rotation}. The Euclidean action is defined as
 \begin{equation}
@@ -28,20 +29,20 @@ which yields the field equation
 \bigg( \frac{\partial^2}{\partial t^2} - \nabla^2 \bigg)\phi + m^2\phi = 0.
 \end{equation}
 So doing the processes mentioned above, we get that
-\begin{equation}
-S_{Min} = \int dx_4 \int dx \bigg[\frac{1}{2}\bigg(\frac{\partial\phi}{\partial x_4} \bigg)^2 + \frac{1}{2}(\nabla \phi)^2 + m^2 \phi^2  \bigg]
+\begin{equation}%%%%%%%%%%%%% 4 %%%%%%%%%%%%%%%
+S_{Euc} = \int dx_4 \int dx \bigg[\frac{1}{2}\bigg(\frac{\partial\phi}{\partial x_4} \bigg)^2 + \frac{1}{2}(\nabla \phi)^2 + m^2 \phi^2  \bigg]
 \end{equation}
 which yields the field equation
-\begin{equation}
+\begin{equation}%%%%%%%%%%%%% 5 %%%%%%%%%%%%%%%
 \bigg( \frac{\partial^2}{\partial {x_4}^2} + \nabla^2 \bigg)\phi - m^2\phi = 0.
 \end{equation}
 Since we can write the path integral as
-\begin{equation}
+\begin{equation}%%%%%%%%%%%%% 6 %%%%%%%%%%%%%%%
 G(q_i,q_f;t) = \int Dq \*\ \textrm{exp}\bigg[\frac{i}{\hbar}S_{Min}\bigg] =  \int Dq \*\ \textrm{exp}\bigg[\frac{i}{\hbar}\int_0^t dt \bigg(\frac{m}{2}\dot{q^2} - V(q) \bigg) \bigg]
 \end{equation}
 In the imaginary time we can also write this as
-\begin{equation}
-G_E(q_i,q_f;\tau) = \int Dq \*\ \textrm{exp}\bigg[-\frac{1}{\hbar}S_{Euc}\bigg] =  \int Dq \*\ \textrm{exp}\bigg[\frac{i}{\hbar}\int_0^\tau d\tau' \bigg(\frac{m}{2}\dot{q^2} + V(q) \bigg) \bigg].
+\begin{equation}%%%%%%%%%%%%% 7 %%%%%%%%%%%%%%%
+G_E(q_i,q_f;\tau) = \int Dq \*\ \textrm{exp}\bigg[-\frac{1}{\hbar}S_{Euc}\bigg] =  \int Dq \*\ \textrm{exp}\bigg[-\frac{1}{\hbar}\int_0^\tau d\tau' \bigg(\frac{m}{2}\dot{q^2} + V(q) \bigg) \bigg].
 \end{equation}
 One can see that the potential V becomes -V. We can see the same thing from the stationary phase equations
 \begin{equation}
@@ -72,7 +73,7 @@ F[x] = F[\bar{x}+y] = F[\bar{x}] + \frac{1}{2}\int dt \int dt' y(t')A(t,t')y(t) 
 where $A(t,t') = \frac{\delta^2 F[x]}{\delta x(t) \delta x(t')} \bigg|_{x=\bar{x}}$ denotes the second functional derivative.\\
 If the operator $\hat{A} \equiv \{A(t,t')\}$ is positive definite, then the functional integration reduces to
 \begin{equation}
-\int Dx \*\ e^{-F[x]} \simeq e^{-F[\bar{x}]} \textrm{det}\bigg(\frac{\hat{A}}{2\pi}\bigg)^{-1/2}.
+\int Dx \*\ e^{-F[x]} \simeq \sum_i e^{-F[\bar{x}_i]} \*\ \textrm{det}\bigg(\frac{\hat{A}_i}{2\pi}\bigg)^{-1/2}.
 \end{equation}
 Putting the lagrangian as $L(q,\dot{q}) = m\dot{q}^2/2 - V(q)$, we get the second functional derivative as:
 \begin{equation}
@@ -83,11 +84,11 @@ As an example of the above let's see a quantum particle in a well. Let the well 
 G(0,0;t) \simeq \int Dr \*\ \textrm{exp} \bigg[-\frac{i}{\hbar}\int_0^t dt'  r(t')\frac{m}{2}(\partial^2_{t'} + \omega^2)]r(t')\bigg].
 \end{equation}
 This integral gives us
-\begin{equation}
+\begin{equation} %%%%%%%%%%%%% 14 %%%%%%%%%%%%%%%
 G(0,0;t) \simeq J \textrm{det}(-m(\partial^2_{t} + \omega^2)/2)^{-1/2}
 \end{equation}
 Finding the eigenvalues and then evaluating the determinant gives us
-\begin{equation}
+\begin{equation} %%%%%%%%%%%%% 15 %%%%%%%%%%%%%%%
 G(0,0;t) \simeq J \sqrt{\frac{m\omega}{2\pi i \hbar \textrm{sin}(\omega t)}} \*\ \Theta(t).
 \end{equation}
 The above expression is exact for harmonic oscillator. We will now use this tool to evaluate the double well potential.
@@ -98,40 +99,98 @@ The above expression is exact for harmonic oscillator. We will now use this tool
     \includegraphics[height=5cm, width=6cm]{fig1}
 \end{figure}
 
-
-
-
-
-
-
-
-
-
+Our aim is to estimate the probability amplitude that particle stays at one minima or tunnels from one to the other minima. Using the Euclidean path integral formulation the transition amplitude is given by
+\begin{equation}%%%%%%%%%%%%% 16 %%%%%%%%%%%%%%%
+G_E(a,\pm a;\tau)=  \int_{q(0)=\pm a}^{q(\tau)=a} Dq \*\ \textrm{exp}\bigg[-\frac{1}{\hbar}\int_0^\tau d\tau' \bigg(\frac{m}{2}\dot{q^2} + V(q) \bigg) \bigg].
+\end{equation}
+If the particle stays in one of the minima it's the same as the expression (15). Now the interesting stuff happens when the particle tunnels. Let's first see the classical solution of this problem. For that we minimise the action that then gives us that energy of the classical particle should be constant. Now since in Euclidean time formalism we replace V by -V. Also when the particle is at the boundaries the enrgy is 0. This gives us
+\begin{equation}
+\frac{m}{2}\dot{q}^2_{cl}=V(q_{cl}).
+\end{equation}
+This gives the instanton action as
+\begin{equation}
+S_{inst} = \int_0^{\tau} d\tau ' m\dot{q}^2_{cl} = \int  d\tau ' \frac{dq_{cl}}{dt}(m\dot{q}) = \int_{-a}^{a} dq (2mV(q))^{1/2}.
+\end{equation}
+Defining the second of potential at $\pm a$ by $V(\pm a)=m\omega^2$, equation (17) then implies, $\dot{q}= -\omega(q_{cl}-a)$ (for the particle close to the right maximum). This equation then integrates to $\lim{\tau \to \infty} q_{cl} \to a - e^{-\tau \omega}$. We see that the classical action depends only on the potential and it does not care about the path $q_{cl}$.\\
 \begin{figure}[ht]
     \centering
     \includegraphics[height=4cm, width=15cm]{fig2}
 \end{figure}
+
+There are two important things to note:
+\begin{itemize}
+\item The solution is confined to a narrow interval of time. So there must exist approximate solutions of the stationary equation involving firther instanton/anti-instanton pairs.
+\item Acoording to saddle-point scheme, the path integral is obtained by summing over all solutions(see (11)) of saddle point equations and hence over all instanton configurations. The summation over multi-instanton configuration is referred to as \textbf{``instanton gas"}.
+\end{itemize}
+Since the instantons have short temporal support we can take the dilute gas approximation or that the two instantons don't overlap or the overlap contribution is very small. So for multi-instanton configuration we can write
+\begin{equation}
+G(a,\pm a; \tau) \simeq \sum_{n\*\ \mathrm{even/odd}}K^n \int_0^{\tau}d\tau_1 \int_0^{\tau_1}d\tau_2 ... \int_0^{\tau_{n-1}}d\tau_n \*\ A_n(\tau_1,...,\tau_n),
+\end{equation}
+where $A_n$ denotes the amplitude associated with n instantons, and we have taken into account that even/odd for $\pm a$. Here K denotes a constant absorbing the temporal dimensions.
 \begin{figure}[ht]
     \centering
     \includegraphics[height=4cm, width=15cm]{fig3}
 \end{figure}
+
+Now, $A_n = A_{n,cl} \times A_{n,qu} $, where the terms show the classical and quantum contributions respectively. So we can write
+\begin{equation}
+A_{n,cl}(\tau_1,...,\tau_n) = e^{-nS_{inst}/\hbar},
+\end{equation}
+which is independent of the time coordinates $\tau_i$. For finding $ A_{n,qu} $ we notice that the quantum fluctuation of the single instanton is given in equation (15), we just need to move it to imaginary time($t \to -i\tau$). So it simplifies as
+\begin{equation}
+\sqrt{\frac{1}{\mathrm{sin}(-i\omega(\tau_{i+1}-\tau_{i}))}} \sim e^{-\omega(\tau_{i+1}-\tau_{i})/2},
+\end{equation}
+which gives
+\begin{equation}
+A_{n,qu}(\tau_1,...,\tau_n) = e^{-\omega\tau /2}.
+\end{equation}
+This implies
+\begin{dmath}
+G(a,\pm a; \tau) \simeq \sum_{n\*\ \mathrm{even/odd}}K^n e^{-nS_{inst}/\hbar}e^{-\omega\tau /2}\int_0^{\tau}d\tau_1 \int_0^{\tau_1}d\tau_2 ... \int_0^{\tau_{n-1}}d\tau_n  = e^{-\omega\tau /2} \sum_{n\*\ \mathrm{even/odd}}\frac{1}{n!}\Big(K \tau e^{-S_{inst}/\hbar}\Big)^n .
+\end{dmath}
+Performing the summation gives
+\begin{dmath}
+G(a,\pm a; \tau) \simeq Ce^{-\omega\tau /2} \mathrm{cosh}\Big(K \tau e^{-S_{inst}/\hbar}\Big),
+\\ \*\ Ce^{-\omega\tau /2} \mathrm{sinh}\Big(K \tau e^{-S_{inst}/\hbar}\Big)
+\end{dmath}
+where C is some factor not depending exponentially on time. To find the average or effective number of instantons contributing to the sum we calculate $\langle n \rangle \equiv \Sigma_n c_n n/ \Sigma_n c_n$ (define X $\equiv \tau K e^{-S_{inst}/\hbar}$)
+\begin{equation}
+\langle n \rangle \equiv \frac{\Sigma_n nX^n/n!}{\Sigma_n X^n/n!} = X.
+\end{equation}
+We see that $\langle n \rangle /\tau = K e^{-S_{inst}/\hbar}$, that is the average instanton density is independent of $\tau$ and is exponentially small compared to instanton action, validating our dilute gas assumption.\\
+Thinking in physical terms we know that degeneracy is lifted from the two states due to overlap or tunneling. For a weak inter-barrier coupling, the ground states split into a symmetric and anti-symmetric eigenstates $|S\rangle$ and $|A \rangle$, with energies $\epsilon_S$ and $\epsilon_A$.
+\begin{equation}
+G(a,\pm a;\tau) \simeq \langle a| \bigg( |S\rangle e^{-\epsilon_S \tau /\hbar} \langle S| + |A\rangle e^{-\epsilon_A \tau /\hbar} \langle A|   \bigg) |\pm a\rangle.
+\end{equation}
+This gives $\epsilon_{A/S}=\hbar \omega /2 \pm \Delta \epsilon /2$ where $\Delta \epsilon$ represents the tunnel-splitting.
 \begin{figure}[ht]
     \centering
-    \includegraphics[height=5cm, width=8cm]{fig4}
+    \includegraphics[height=6cm, width=8cm]{fig4}
 \end{figure}
 
-
-
-
-
-
+The instanton calculation gives us that the tunnel splitting of energies,
+\begin{equation}
+\Delta \epsilon = \hbar K \*\ \mathrm{exp}(-S_{inst}/\hbar)
+\end{equation}
+which upto a constant agrres with the WKB-result for tunneling processes. The value of K is given as
+\begin{equation}
+K = \bigg| {\frac{\overline{S_{inst}}}{2\pi \hbar}} \frac{\mathrm{det}[-\partial_t^2 + \omega^2]}{\mathrm{det'}[-\partial_t^2 + V''(\bar{x})]}\bigg|^{\frac{1}{2}}
+\end{equation}
+\\
 \section {Escape from metastable minimum: bounces}
+
+
 \begin{figure}[ht]
     \centering
     \includegraphics[height=4cm, width=15cm]{fig5}
 \end{figure}
-If we want to calculate the survival probability, the probability amplitude of remaining at the potential minimum $q_m$.
 
+If we want to calculate the survival probability, the probability amplitude of remaining at the potential minimum $q_m$. The classical solution here takes the form of a \textbf{``bounce''}. Similar to the instanton we can expect multiple bounce trajectories to give significant contribution. Summing over all the trajectories here gives the survival probability as
+\begin{equation}
+G(q_m,q_m;\tau) = Ce^{-\omega\tau /2} \mathrm{exp}\Big(K \tau e^{-S_{bounce}/\hbar}\Big)
+\end{equation}
+Doing the analytic continuation gives $G(q_m,q_m;t) = Ce^{-i\omega t /2} \mathrm{exp}\big[-\frac{\Gamma}{2}t\big]$ where the decay rate is given by $\Gamma /2 = |K| e^{-S_{bounce}/\hbar}$.(On physical grounds we see that K must be imaginary.)
+\section {Periodic instantons}
 
 \section {Tunneling of quantum fields}
 
@@ -140,7 +199,10 @@ If we want to calculate the survival probability, the probability amplitude of r
     \includegraphics[height=9cm, width=9cm]{fig6}
 \end{figure}
 
-
+  \section {References}
+1. Solitons and Instantons by R. Rajaraman.\\
+2. Aspects of Symmetry by Sidney Coleman.\\
+3. Condensed Matter Field Theory by Altland and Simons.
 
 
 
