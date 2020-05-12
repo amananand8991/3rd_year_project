@@ -1,11 +1,11 @@
 # Keldysh field theory
-My aim was to study the Keldysh field theory(a non-equilibirium Quantum Statistical Mechanics). Along the way of understanding that, i came across these topics:
+My aim was to study the Keldysh field theory(a non-equilibrium Quantum Statistical Mechanics). Along the way of understanding that, I came across these topics:
 
-* Second quantisation
+* Second quantization
 * Path integrals
 * Functional field integrals
 * Perturbation theory
-* Non-equilibirium Classical Statistical Mechanics
-* Non-equilibirium Quantum Statistical Mechanics
+* Non-equilibrium Classical Statistical Mechanics
+* Non-equilibrium Quantum Statistical Mechanics
 * Solitons & Instantons
 * Topology
