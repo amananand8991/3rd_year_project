@@ -46,20 +46,75 @@ Using the below two equations the general contour can be taken from t = $-\infty
 This gives 
 
 \begin{equation}
-\langle \hat{\mathcal{O}} \rangle (t)  = \frac{1}{\mathrm{Tr}\{\hat{\rho}(t)\}} \mathrm{Tr}\{\hat{\mathcal{U}}_{-\infty,+\infty} \hat{\mathcal{U}}_{+\infty,t} \hat{\mathcal{O}} \hat{\mathcal{U}}_{t,-\infty} \hat{\rho}(-\infty)  \}.
+\langle \hat{\mathcal{O}} \rangle (t)  = \frac{1}{\mathrm{Tr}\{\hat{\rho}(-\infty)\}} \mathrm{Tr}\{\hat{\mathcal{U}}_{-\infty,+\infty} \hat{\mathcal{U}}_{+\infty,t} \hat{\mathcal{O}} \hat{\mathcal{U}}_{t,-\infty} \hat{\rho}(-\infty)  \}.
+\end{equation}
+We introduce the generating(partition) function as
+\begin{equation}
+Z[V] \equiv \frac{\mathrm{Tr}\{\hat{\mathcal{U}_C}[V]\hat{\rho}(-\infty)\}}{\mathrm{Tr}\{\hat{\rho}(-\infty)\}}
+\end{equation}
+where $\hat{\mathcal{U}}_C = \hat{\mathcal{U}}_{-\infty , +\infty} \hat{\mathcal{U}}_{+\infty , -\infty}$ and the hamiltonian for forward and bakward evolution are defined as $\hat{H}^{\pm}_V (t) \equiv \hat{H}(t) \pm \hat{\mathcal{O}}V(t)$. By taking the functional derivatives of the generating function we can calculate
+\begin{equation}
+\langle \hat{\mathcal{O}} \rangle (t) =(i/2)\frac{\delta Z[V]}{\delta V(t)} \bigg|_{V=0}
 \end{equation}
 
+
 \subsection {Coherent states}
-A coherent state parametrized by a complex number $\phi$ is defined as the eigenstate of the annhilation operator  as $\hat{b} |\phi\rangle = \phi |\phi\rangle$
-\subsection {Partition function}
+A coherent state parametrized by a complex number $\phi$ is defined as the eigenstate of the annhilation operator  as $\hat{b} |\phi\rangle = \phi |\phi\rangle$. So
+\begin{equation}
+|\phi\rangle = \sum_{n=0}^{\infty} \frac{\phi^n}{\sqrt{n!}}|n\rangle = e^{\phi \hat{b}^\dagger}|0\rangle.
+\end{equation}
+It follows that
+\begin{equation}
+\begin{split}
+&\quad \langle\phi|\phi'\rangle = e^{\phi \phi'}, \\
+&\quad \hat{1} = \int d[\bar{\phi},\phi]\*\ e^{-|\phi|^2} |\phi\rangle \langle\phi| ,\\
+ &\quad Z[\bar{J},J] = \int d[\bar{\phi},\phi]\*\ e^{-\bar{\phi}\phi + \bar{\phi}J + \bar{J}\phi} = e^{\bar{J}J},\\
+&\quad \int d[\bar{\phi},\phi]\*\ e^{-|\phi|^2} \bar{\phi}^n\phi^{n'} = \frac{\partial^{n+n'}}{\partial J^n \partial \bar{J}^{n'}} Z[\bar{J},J] \bigg|_{\bar{J}=J=0} = n! \delta_{n,n'},\\
+&\quad \mathrm{Tr}\{\mathcal{O}\} = \int d[\bar{\phi},\phi]\*\ e^{-|\phi|^2} \langle\phi|\mathcal{O}|\phi\rangle,\\
+&\quad f(\rho) \equiv \langle\phi|\rho^{\hat{b}^{\dagger} \hat{b}}|\phi\rangle = e^{\bar{\phi} \phi' \rho}.
+\end{split}
+\end{equation}
+
+
+\section {Bosonic Partition function}
+Simplest example of many body system: bosonic particles occupying a single quantum state with energy $\omega_0$. So,
+\begin{equation}
+\hat{H}(\hat{b}^{\dagger},\hat{b}) = \omega_0 \hat{b}^{\dagger}\hat{b}.
+\end{equation}
+Choose the initial density matrix be thermal density matrix
+\begin{equation}
+\hat{\rho}_0 = e^{-\beta(\hat{H}-\mu \hat{N})} = e^{-\beta (\omega_0 -\mu )\hat{b}^{\dagger}\hat{b}}.
+\end{equation}
+and
+\begin{equation}
+\mathrm{Tr}\{\hat{\rho}_0\} = \sum_{n=0}^{\infty}e^{-\beta (\omega_0 -\mu )n} = [1 - \rho(\omega_0)]^{-1},
+\end{equation}
+where $\rho(\omega_0) = e^{-\beta (\omega_0 -\mu )}$. To calculate $\mathrm{Tr}\{\hat{\mathcal{U}}_C \hat{\rho}_0\}$ we divide the time contour $\mathcal{C}$ into 2N parts going from $t=-\infty$ to $+\infty$ and insert the identity in between. So the expression becomes
+\begin{equation}
+\langle \phi_{2N}|\hat{\mathcal{U}}_{-\delta t}|\phi_{2N-1}\rangle  ... \langle \phi_{N+2}|\hat{\mathcal{U}}_{-\delta t}|\phi_{N+1}\rangle \langle \phi_{N+1}|\hat{1}|\phi_{N}\rangle \langle \phi_{N}|\hat{\mathcal{U}}_{+\delta t}|\phi_{N-1}\rangle ... \langle \phi_{2}|\hat{\mathcal{U}}_{+\delta t}|\phi_{1}\rangle \langle \phi_{1}|\hat{\rho}_0|\phi_{2N}\rangle.
+\end{equation} 
+Where each of the terms are given as
+\begin{equation}
+\langle \phi_{j}|\hat{\mathcal{U}}_{\pm \delta t}|\phi_{j-1}\rangle \approx \langle \phi_{j}|(1 \mp i\hat{H}(\hat{b}^{\dagger},\hat{b})\delta t)|\phi_{j-1}\rangle \approx e^{\bar{\phi}_j \phi_{j-1}}e^{\mp  i\hat{H}(\bar{\phi}_j ,\phi_{j-1})\delta t}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
 
 \subsection {Gaussian like integrals}
 
 \subsection {Going Green}
 
 
-\section {Keldysh Sorcery}
+%\section {Keldysh Sorcery}
 
-\section {Keldysh Kung Fu}
+%\section {Keldysh Kung Fu}
 
 \end{document}

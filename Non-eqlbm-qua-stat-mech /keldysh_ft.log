@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.8.31)  9 MAY 2020 23:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.8.31)  13 FEB 2021 14:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -379,8 +379,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \WF@box=\box51
 \WF@everypar=\toks26
 Package: wrapfig 2003/01/31  v 3.6
-)
-No file keldysh_ft.aux.
+) (./keldysh_ft.aux)
 \openout1 = `keldysh_ft.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
@@ -395,7 +394,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count143
 \scratchdimen=\dimen173
@@ -529,31 +528,43 @@ $[] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 e[]e[]:::e[]
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./keldysh_ft.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (70.18365pt too wide) detected at line 95
+\OMS/cmsy/m/n/12 h\OML/cmm/m/it/12 ^^^[]\OMS/cmsy/m/n/12 j[]j\OML/cmm/m/it/12 ^
+^^[]\OMS/cmsy/m/n/12 i\OML/cmm/m/it/12 :::\OMS/cmsy/m/n/12 h\OML/cmm/m/it/12 ^^
+^[]\OMS/cmsy/m/n/12 j[]j\OML/cmm/m/it/12 ^^^[]\OMS/cmsy/m/n/12 ih\OML/cmm/m/it/
+12 ^^^[]\OMS/cmsy/m/n/12 j[]j\OML/cmm/m/it/12 ^^^[]\OMS/cmsy/m/n/12 ih\OML/cmm/
+m/it/12 ^^^[]\OMS/cmsy/m/n/12 j[]j\OML/cmm/m/it/12 ^^^[]\OMS/cmsy/m/n/12 i\OML/
+cmm/m/it/12 :::\OMS/cmsy/m/n/12 h\OML/cmm/m/it/12 ^^^[]\OMS/cmsy/m/n/12 j[]j\OM
+L/cmm/m/it/12 ^^^[]\OMS/cmsy/m/n/12 ih\OML/cmm/m/it/12 ^^^[]\OMS/cmsy/m/n/12 j[
+]j\OML/cmm/m/it/12 ^^^[]\OMS/cmsy/m/n/12 i\OML/cmm/m/it/12 :
+ []
+
+[2] [3] (./keldysh_ft.aux) ) 
 Here is how much of TeX's memory you used:
- 9921 strings out of 493029
- 175300 string characters out of 6136234
- 202794 words of memory out of 5000000
+ 9923 strings out of 493029
+ 175330 string characters out of 6136234
+ 203794 words of memory out of 5000000
  13386 multiletter control sequences out of 15000+600000
  12871 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,5n,40p,10379b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
-</
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
-bm10.pfb>
-Output written on keldysh_ft.pdf (2 pages, 100218 bytes).
+ 38i,18n,40p,10379b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/symbols/msbm10.pfb>
+Output written on keldysh_ft.pdf (3 pages, 119350 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 62 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
